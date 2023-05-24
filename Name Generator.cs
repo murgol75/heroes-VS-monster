@@ -8,7 +8,7 @@ namespace heroes_VS_monster
 {
     internal class Name_Generator
     {
-        private static readonly string[] WolfNames = { "John", "Jane", "Michael", "Emily", "William", "Olivia" };
+        private static readonly string[] WolfNames = { "John", "Jane", "Michael", "Emily", "William", "Olivia", "Wolfen" };
         
         private static readonly Random random = new Random();
 
