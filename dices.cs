@@ -13,7 +13,7 @@ namespace heroes_VS_monster
         // methode pour lancer 1D : genre lancer(6) lancera 1D6
         public static int RollD(int face)
         {
-            return random.Next(1, face + 1);
+            return random.Next(1, face+1);
         }
 
         // methode pour lancer les des pour generer les caracs
