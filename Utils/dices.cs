@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace heroes_VS_monster
+namespace heroes_VS_monster.Utils
 {
     public class dices
     {
@@ -20,12 +20,12 @@ namespace heroes_VS_monster
 
         public static int Lancer4D6()
         {
-            int[] jet = new int[4];
+            int[] jetDeDes = new int[4];
             for (int i = 0; i < 4; i++)
             {
-                jet[i] = RollD(6);
+                jetDeDes[i] = RollD(6);
             }
-            return jet.Sum() - jet.Min();
+            return jetDeDes.Sum() - jetDeDes.Min();
         }
 
     }
