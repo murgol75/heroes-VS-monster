@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace heroes_VS_monster.Utils
 {
-    public class dices
+    public class dices //TODO cette classe doit posséder 2 propriété en lecture seule Minimum et Maximum
     {
         private static Random random = new Random();
 
@@ -18,7 +18,7 @@ namespace heroes_VS_monster.Utils
 
         // methode pour lancer les des pour generer les caracs
 
-        public static int Lancer4D6()
+        public static int Lancer4D6Garde3()
         {
             int[] jetDeDes = new int[4];
             for (int i = 0; i < 4; i++)

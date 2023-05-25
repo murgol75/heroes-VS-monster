@@ -13,7 +13,7 @@ namespace heroes_VS_monster.Utils
         private static readonly string[] dragonNames = { "Brogon, Protecteur Du Ciel", "Gronod, Le Géant", "Chodeon, Le Maladroit", "Oimmaiss, Le Prudent", "Rumbig, Le Titan", "Nelzrar, Le Lent", "Nombyn, Protecteur Du Ciel", "Tozisdeir, Maître De Glace", "Chelbocrirth, Seigneur Des Verts", "Geomerra, Le Silencieux", "Oirruss, L'Élu", "Riervass, Le Silencieux", "Roirrurth, Le Fou", "Coseo, Le Maigre", "Ulled, Le Fou", "Ceoghu, Le Bruyant", "Xondrien, Maître Du Feu", "Choidreintarth, Le Grincheux", "Boirvassion, Le Titan", "Aervaintiass, Tueur De Lapins", "Sonneor, Champion Du Ciel", "Fravnath, La Rédemptrice", "Qiormai, La Juvénile", "Aimmoth, Mangeur De Tous", "Yrmol, La Silencieuse", "Fellul, Mangeur De Tous", "Vyrsyrth, La Juvénile", "Heghintot, La Rapide", "Vyrmenelth, Protectrice De La Vie", "Gethyre, Dame Des Bleus" };
 
         private static readonly Random random = new Random();
-        //TODO a refaire car je vais ajouter le concept de race, et comme ça la race sera tirée au hasard
+        
         
         public static string GenerateRandomName(string raceDuMonstre)
         {

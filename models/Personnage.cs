@@ -40,7 +40,7 @@ namespace heroes_VS_monster.models
                 return CalculModificateur(endurance + bonusRacialEndurance);
             }
         }
-        public int pv { get; set; }
+        private int pv { get; set; }
 
         public int maxPv;
 
