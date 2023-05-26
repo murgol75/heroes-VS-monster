@@ -21,6 +21,8 @@ namespace heroes_VS_monster.models
             maxPv = 0;
             piecesDOr = 0;
             cuir = 0;
+            posX = 0;
+            posY = 0;
         }
         public int force { get; }
 
@@ -50,6 +52,10 @@ namespace heroes_VS_monster.models
 
         public int piecesDOr { get; set; }
         public int cuir { get; set; }
+
+        public int posX;
+        public int posY;
+
         public int CalculModificateur(int carac)
         {
             switch (carac)

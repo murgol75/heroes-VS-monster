@@ -12,8 +12,11 @@ namespace heroes_VS_monster.models.monstres
         public Monstre() : base()
         {
             nom = Name_Generator.GenerateRandomName(race);
+            posX = dices.RollD(30)-1; // -1 car la position sera utilisée comme index
+            posY = dices.RollD(30)-1;
+
         }
 
-        
+
     }
 }
