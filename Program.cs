@@ -15,6 +15,7 @@ namespace heroes_VS_monster
             //TODO methode pour créer le perso en demandant à l'utilisateur
             var herosPrincipal = new Nain("murgol");
             Monstre[] monstres = GenererDesMonstres.GenereMonstre();
+
             Combat combat = new Combat();
             combat.Fight(herosPrincipal);
         }

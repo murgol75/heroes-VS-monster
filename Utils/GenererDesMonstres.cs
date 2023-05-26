@@ -18,7 +18,9 @@ namespace heroes_VS_monster.Utils
             bool premierBienPlace = false;
             while (!premierBienPlace)
             {
-                Monstre monstre = new Monstre();
+                // CreationDeMonstre.CreeMonstre()
+                var monstre = CreationDeMonstre.CreeMonstre();
+                
                 if (monstre.posX != 0 && monstre.posY != 0)
                     {
                     ennemis.Add(monstre);
@@ -31,47 +33,29 @@ namespace heroes_VS_monster.Utils
                 bool suivantMalPlace = true;
                 while (suivantMalPlace)
                 {
-                    Monstre nextMonstre = new Monstre();
+                    var nextMonstre = CreationDeMonstre.CreeMonstre();
+                    //Monstre nextMonstre = new Monstre();
                     if (nextMonstre.posX != 0 && nextMonstre.posY != 0)
                     {
-                        int compteur = 0;
+                        int compteurErreur = 0;
                         for (int j=0;j<ennemis.Count()-1;j++)
                         {
-                            // verifier position de Nextmonstre par rapport à ennemi[j]
-                            // posX NM-posX enJ 
-
-                            // si abs(X NM - Xenj) <3 && abs(Y NM - Yenj) <3 alors pas bon  ... bon, l'idée c'est qu'en fait le monstre ne doit pas etre adjacent OOO
-                            //                                                                                                                                    OXO
-                            //                                                                                                                                    OOO
-
-                            if (Math.Abs(nextMonstre.posX - ennemis[j].posX) >2)
+                            if (ennemis[j].posX-1 <= nextMonstre.posX && nextMonstre.posX <= ennemis[j].posX+1 )
                             {
-                                //suivantMalPlace = true; // partir sur un compteur +1 si mal placé
+                                compteurErreur += 1;
                             }
                         }
-
-
-
-                        ennemis.Add(nextMonstre);
+                        if (compteurErreur==0)
+                        {
+                            ennemis.Add(nextMonstre);
+                            Console.WriteLine($"cuir : {ennemis[i].cuir}, endurance : {ennemis[i].endurance}, force : {ennemis[i].force}, nom : {ennemis[i].nom}, PO : {ennemis[i].piecesDOr}, posX : {ennemis[i].posX}, posY : {ennemis[i].posY}, pv : {ennemis[i].pv}, race : {ennemis[i].race}");
+                            suivantMalPlace = false;
+                        }
                         premierBienPlace = true;
                     }
                 }
-
-                //instancier le monstre
-                Monstre monstre = new Monstre();
-                //verifier si le mob n'est pas en 00
-                if (monstre.posX!=0 && monstre.posY!=0)
-
-
-
-
-                //verifier si le mob n'est pas en 00 puis boucler pour verifier s'il n'est pas à 2 cases d'un autre
-                ennemis.Add(CreationDeMonstre.CreeMonstre());
             }
             return ennemis.ToArray();
-
-
         }
-
     }
 }
