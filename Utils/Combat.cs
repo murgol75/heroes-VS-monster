@@ -13,7 +13,7 @@ namespace heroes_VS_monster.Utils
     {
         public void Fight(Personnage joueur)
         {
-            // generer les monstres
+            // generer les monstress
             Monstre[] monstres = GenererDesMonstres.GenereMonstre();
 
             // boucle while combat de 0 à 9
@@ -26,7 +26,7 @@ namespace heroes_VS_monster.Utils
                 Console.WriteLine($"rencontre N°{monstresMorts + 1} : {monstres[monstresMorts].nom} le {monstres[monstresMorts].race}");
                 while (etatMonstre == "vivant" && etatJoueur == "vivant")
                 {
-                    joueur.Frappe(monstres[monstresMorts]);
+                    joueur.Frappe(monstres[monstresMorts]); //TODO transformer ceci en méthode
                     if (monstres[monstresMorts].pv <= 0)
                     {
                         joueur.piecesDOr += monstres[monstresMorts].piecesDOr;

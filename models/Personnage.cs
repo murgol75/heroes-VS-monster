@@ -13,9 +13,9 @@ namespace heroes_VS_monster.models
         {
             nom = "";
             race = "";
-            force = dices.Lancer4D6();
+            force = dices.Lancer4D6Garde3();
             bonusForce = 0;
-            endurance = dices.Lancer4D6();
+            endurance = dices.Lancer4D6Garde3();
             bonusEndurance = 0;
             pv = 0;
             maxPv = 0;
@@ -40,9 +40,9 @@ namespace heroes_VS_monster.models
                 return CalculModificateur(endurance + bonusRacialEndurance);
             }
         }
-        private int pv { get; set; }
+        public int pv { get; set; } 
 
-        public int maxPv;
+                public int maxPv;
 
         public string nom { get; set; }
 
@@ -70,6 +70,7 @@ namespace heroes_VS_monster.models
             int degats = dices.RollD(4) + modForce;
             cible.pv -= degats;
             Console.WriteLine($"{nom} frappe {cible.nom} et fait {degats} dégâts.  {cible.nom} ne possède plus que {cible.pv} PV");
+
         }
 
     }

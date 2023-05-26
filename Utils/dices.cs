@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace heroes_VS_monster.Utils
 {
-    public class dices //TODO cette classe doit posséder 2 propriété en lecture seule Minimum et Maximum
+    public class dices 
     {
         private static Random random = new Random();
 
