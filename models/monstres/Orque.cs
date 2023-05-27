@@ -16,6 +16,7 @@ namespace heroes_VS_monster.models.monstres
             bonusRacialForce = 1;
             pv = endurance + modEndurance;
             race = "orque";
+            token = 'O';
         }
 
 

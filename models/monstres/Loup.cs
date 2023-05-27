@@ -15,6 +15,7 @@ namespace heroes_VS_monster.models.monstres
             bonusRacialEndurance = 1;
             pv = endurance + modEndurance;
             race = "loup";
+            token = 'L';
         }
     }
 }

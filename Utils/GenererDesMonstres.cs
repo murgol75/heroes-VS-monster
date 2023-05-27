@@ -34,13 +34,12 @@ namespace heroes_VS_monster.Utils
                 while (suivantMalPlace)
                 {
                     var nextMonstre = CreationDeMonstre.CreeMonstre();
-                    //Monstre nextMonstre = new Monstre();
                     if (nextMonstre.posX != 0 && nextMonstre.posY != 0)
                     {
                         int compteurErreur = 0;
                         for (int j=0;j<ennemis.Count()-1;j++)
                         {
-                            if (ennemis[j].posX-1 <= nextMonstre.posX && nextMonstre.posX <= ennemis[j].posX+1 )
+                            if ((ennemis[j].posX-1 <= nextMonstre.posX && nextMonstre.posX <= ennemis[j].posX+1 ) && (ennemis[j].posY - 1 <= nextMonstre.posY && nextMonstre.posY <= ennemis[j].posY + 1))
                             {
                                 compteurErreur += 1;
                             }

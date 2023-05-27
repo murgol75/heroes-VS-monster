@@ -13,6 +13,7 @@ namespace heroes_VS_monster.models
         {
             nom = "";
             race = "";
+            token = '';
             force = dices.Lancer4D6Garde3();
             bonusForce = 0;
             endurance = dices.Lancer4D6Garde3();

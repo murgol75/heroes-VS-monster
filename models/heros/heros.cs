@@ -11,6 +11,7 @@ namespace heroes_VS_monster.models.heros
         public heros(string name) : base()
         {
             nom = name;
+            token = 'H';
         }
 
         
