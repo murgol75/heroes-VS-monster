@@ -12,7 +12,10 @@ namespace heroes_VS_monster.Utils
     {
         public void Jeu (Personnage hero, Personnage[] ennemi)
         {
-            InitialiseGrille.initPlateau(hero, ennemi[]);
+            InitialiseGrille plateau = new InitialiseGrille();
+            plateau.initPlateau(hero, ennemi);
+            imprimer_grille grille = new imprimer_grille();
+            grille.affichePlateau();
         }
     }
 }

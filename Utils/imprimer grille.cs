@@ -8,7 +8,7 @@ namespace heroes_VS_monster.Utils
 {
     internal class imprimer_grille
     {
-        static void affichePlateau(char[,] grille) // c'est dans la classe de déplacement du heros que j'appelle cette méthode
+        static void affichePlateau(char[,] grille)
         {
             Console.Clear();
             Console.Write("╔");
