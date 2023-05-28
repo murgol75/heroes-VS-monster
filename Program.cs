@@ -16,6 +16,8 @@ namespace heroes_VS_monster
             var herosPrincipal = new Nain("murgol");
             Monstre[] monstres = GenererDesMonstres.GenereMonstre();
 
+
+
             Combat combat = new Combat();
             combat.Fight(herosPrincipal);
         }

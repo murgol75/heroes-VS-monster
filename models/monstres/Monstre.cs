@@ -10,14 +10,19 @@ namespace heroes_VS_monster.models.monstres
 {
     public class Monstre : Personnage
     {
+        
+
         public Monstre() : base()
         {
             nom = Name_Generator.GenerateRandomName(race);
-            posX = dices.RollD(30)-1; // -1 car la position sera utilisée comme index
-            posY = dices.RollD(30)-1;
+
+            position[1] = dices.RollD(15)-1; // -1 car la position sera utilisée comme index
+            position[0] = dices.RollD(15)-1;
             isDead = false; // me servira à mettre un X dans la grille là où le monstre est mort
             isHidden = true; // tant qu'il est caché il n'apparait pas dans la grille
         }
+        public bool isDead;
+        public bool isHidden;
 
 
     }

@@ -21,7 +21,7 @@ namespace heroes_VS_monster.Utils
                 // CreationDeMonstre.CreeMonstre()
                 var monstre = CreationDeMonstre.CreeMonstre();
                 
-                if (monstre.posX != 0 && monstre.posY != 0)
+                if (monstre.position[1] != 0 && monstre.position[0] != 0)
                     {
                     ennemis.Add(monstre);
                     premierBienPlace = true;
@@ -34,23 +34,27 @@ namespace heroes_VS_monster.Utils
                 while (suivantMalPlace)
                 {
                     var nextMonstre = CreationDeMonstre.CreeMonstre();
-                    if (nextMonstre.posX != 0 && nextMonstre.posY != 0)
+                    //Console.WriteLine($"monstre : posX {nextMonstre.posX}, posY {nextMonstre.posY}");
+
+                    if (nextMonstre.position[1] != 0 && nextMonstre.position[0] != 0)
                     {
                         int compteurErreur = 0;
                         for (int j=0;j<ennemis.Count()-1;j++)
                         {
-                            if ((ennemis[j].posX-1 <= nextMonstre.posX && nextMonstre.posX <= ennemis[j].posX+1 ) && (ennemis[j].posY - 1 <= nextMonstre.posY && nextMonstre.posY <= ennemis[j].posY + 1))
+                            //Console.WriteLine($"ennemi{j} : posX {ennemis[j].posX}, posY {ennemis[j].posY}");
+                            if ((ennemis[j].position[1]-2 <= nextMonstre.position[1] && nextMonstre.position[1] <= ennemis[j].position[1] + 2 ) && (ennemis[j].position[0] - 2 <= nextMonstre.position[0] && nextMonstre.position[0] <= ennemis[j].position[0] + 2)) //TODO verifier le placement, j'ai l'impression qu'il y a des bugs
                             {
                                 compteurErreur += 1;
+                                //Console.WriteLine(compteurErreur);
                             }
                         }
                         if (compteurErreur==0)
                         {
                             ennemis.Add(nextMonstre);
-                            Console.WriteLine($"cuir : {ennemis[i].cuir}, endurance : {ennemis[i].endurance}, force : {ennemis[i].force}, nom : {ennemis[i].nom}, PO : {ennemis[i].piecesDOr}, posX : {ennemis[i].posX}, posY : {ennemis[i].posY}, pv : {ennemis[i].pv}, race : {ennemis[i].race}");
+                            Console.WriteLine($"posX : {ennemis[i].position[1]}, posY : {ennemis[i].position[0]}, nom : {ennemis[i].nom}");
                             suivantMalPlace = false;
                         }
-                        premierBienPlace = true;
+                        premierBienPlace = true;  //suivant ou premier ??
                     }
                 }
             }

@@ -13,7 +13,7 @@ namespace heroes_VS_monster.models
         {
             nom = "";
             race = "";
-            token = '';
+            token = ' ';
             force = dices.Lancer4D6Garde3();
             bonusForce = 0;
             endurance = dices.Lancer4D6Garde3();
@@ -22,8 +22,8 @@ namespace heroes_VS_monster.models
             maxPv = 0;
             piecesDOr = 0;
             cuir = 0;
-            posX = 0;
-            posY = 0;
+            position[0] = 0;
+            position[1] = 0;
         }
         public int force { get; }
 
@@ -50,12 +50,12 @@ namespace heroes_VS_monster.models
         public string nom { get; set; }
 
         public string race;
+        public char token;
 
         public int piecesDOr { get; set; }
         public int cuir { get; set; }
 
-        public int posX;
-        public int posY;
+        public int[] position;
 
         public int CalculModificateur(int carac)
         {
