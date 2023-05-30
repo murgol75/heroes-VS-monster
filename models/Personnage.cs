@@ -24,7 +24,11 @@ namespace heroes_VS_monster.models
             cuir = 0;
             position[0] = 0;
             position[1] = 0;
+            isDead = false; // pour savoir si le monstre a été tué
+            isHidden = true; // pour savoir si le monstre a été caché
         }
+        public bool isDead;
+        public bool isHidden;
         public int force { get; }
 
         private int bonusForce;
@@ -55,7 +59,7 @@ namespace heroes_VS_monster.models
         public int piecesDOr { get; set; }
         public int cuir { get; set; }
 
-        public int[] position;
+        public int[] position { get; set; } = new int[2];
 
         public int CalculModificateur(int carac)
         {

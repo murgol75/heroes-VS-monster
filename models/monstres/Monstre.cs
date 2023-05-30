@@ -21,8 +21,7 @@ namespace heroes_VS_monster.models.monstres
             isDead = false; // me servira à mettre un X dans la grille là où le monstre est mort
             isHidden = true; // tant qu'il est caché il n'apparait pas dans la grille
         }
-        public bool isDead;
-        public bool isHidden;
+        
 
 
     }

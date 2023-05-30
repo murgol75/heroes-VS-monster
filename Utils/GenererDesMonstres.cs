@@ -42,7 +42,7 @@ namespace heroes_VS_monster.Utils
                         for (int j=0;j<ennemis.Count()-1;j++)
                         {
                             //Console.WriteLine($"ennemi{j} : posX {ennemis[j].posX}, posY {ennemis[j].posY}");
-                            if ((ennemis[j].position[1]-2 <= nextMonstre.position[1] && nextMonstre.position[1] <= ennemis[j].position[1] + 2 ) && (ennemis[j].position[0] - 2 <= nextMonstre.position[0] && nextMonstre.position[0] <= ennemis[j].position[0] + 2)) //TODO verifier le placement, j'ai l'impression qu'il y a des bugs
+                            if ((ennemis[j].position[1]-2 <= nextMonstre.position[1] && nextMonstre.position[1] <= ennemis[j].position[1] + 2 ) && (ennemis[j].position[0] - 2 <= nextMonstre.position[0] && nextMonstre.position[0] <= ennemis[j].position[0] + 2))  //TODO ça c'est de la merde, à refaire 
                             {
                                 compteurErreur += 1;
                                 //Console.WriteLine(compteurErreur);

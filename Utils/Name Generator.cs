@@ -32,7 +32,7 @@ namespace heroes_VS_monster.Utils
 
             }
             string Name = listeDeNom[random.Next(listeDeNom.Length)];
-            return Name;
+            return $"\"{Name}\"";
         }
     }
 }

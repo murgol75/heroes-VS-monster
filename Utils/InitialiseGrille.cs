@@ -9,32 +9,43 @@ namespace heroes_VS_monster.Utils
 {
     public class InitialiseGrille
     {
-        public void initPlateau(Personnage hero, Personnage[] ennemi)
+        public char[,] initPlateau(Personnage hero, Personnage[] ennemi, int[] dimension)
         {
-            int hauteurGrille = 15;
-            int largeurGrille = 15;
-            char[,] plateau = new char[largeurGrille, hauteurGrille];
-
+            char[,] plateau = new char[dimension[0], dimension[1]];
             for (int i = 0; i < plateau.GetLength(0); i++)
             {
                 for (int j = 0; j < plateau.GetLength(1); j++)
                 {
-                    // verifier si l'emplacement correspond au heros
-                    if (i == hero.position[1] && j == hero.position[0])
+                    for (int k = 0; k < ennemi.Count(); k++)
                     {
-                        plateau[i, j] = hero.token;
-                    }
-
-                    // verifier si l'emplacement correspond à un des monstres
-                    for (int k=0;k<ennemi.Count() - 1; k++)
-                    {
-                        if (i == ennemi[k].position[1] && j == ennemi[k].position[0])
+                        // verifier si l'emplacement correspond au heros
+                        if (i == hero.position[1] && j == hero.position[0])
                         {
-                            plateau[i, j] = ennemi[k].token;
+                            plateau[i, j] = hero.token;
+                        }
+                        // verifier si l'emplacement correspond à un des monstres
+                        // pourquoi ne m'en mets t'il qu'un seul ?
+                        else if (i == ennemi[k].position[1] && j == ennemi[k].position[0])       
+                        {
+                            if (!ennemi[k].isDead && !ennemi[k].isHidden)
+                            {
+                                plateau[i, j] = ennemi[k].token;
+                            }
+                            else
+                            {
+                                plateau[i, j] = ' ';
+                            }
+                            k = ennemi.Count();
+                        }
+                        // sinon mettre un espace blanc
+                        else
+                        {
+                            plateau[i, j] = ' ';
                         }
                     }
                 }
             }
+            return plateau;
         }
     }
 }

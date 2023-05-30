@@ -12,14 +12,18 @@ namespace heroes_VS_monster
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, Shorewood");
-            //TODO methode pour créer le perso en demandant à l'utilisateur
-            var herosPrincipal = new Nain("murgol");
-            Monstre[] monstres = GenererDesMonstres.GenereMonstre();
 
-
-
-            Combat combat = new Combat();
-            combat.Fight(herosPrincipal);
+            CreationPerso creationPerso = new CreationPerso();  // Créer une instance de la classe CreationPerso étape 1
+            Personnage herosPrincipal = creationPerso.CreePerso(); // Créer une instance de la classe CreationPerso étape 2 
+            //TODO définir le nombre de monstres
+            Monstre[] ennemis = GenererDesMonstres.GenereMonstre(); // générer tous les monstres 
+            // définir la taille de la map
+            Dimensions taillePlateau = new Dimensions();
+            int[] plateau = taillePlateau.dimensionTableau();
+            
+            // debut du combat, l'idée c'est de tout gerer à partir de "Game.jeu"
+            Game Jouons = new Game();
+            Jouons.Jeu(herosPrincipal, ennemis, plateau, 10);
         }
     }
 }
