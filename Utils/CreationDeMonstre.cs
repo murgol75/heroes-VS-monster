@@ -17,20 +17,20 @@ namespace heroes_VS_monster.Utils
         /// </summary>
         /// <param name="ennemi">le nom de variable de l'ennemi</param>
         /// <returns>un monstre</returns>
-        public static Monstre CreeMonstre()
+        public static Monstre CreeMonstre(int[] dimension)
         {
             int rencontreAleatoire = random.Next(1, 4);
             Monstre monstre;
             switch (rencontreAleatoire)
             {
                 case 1:
-                    monstre = new Loup();
+                    monstre = new Loup(dimension);
                     break;
                 case 2:
-                    monstre = new Orque();
+                    monstre = new Orque(dimension);
                     break;
                 default:
-                    monstre = new Dragonnet();
+                    monstre = new Dragonnet(dimension);
                     break;
             }
             return monstre;

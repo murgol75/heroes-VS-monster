@@ -1,4 +1,4 @@
-﻿using heroes_VS_monster.models.heros;
+﻿using heroes_VS_monster.models.Heros;
 using heroes_VS_monster.models;
 using System;
 using System.Collections.Generic;
@@ -12,17 +12,16 @@ namespace heroes_VS_monster.Utils
     public class Game
     {
         
-        public void Jeu (Personnage hero, Personnage[] ennemi, int[] dimension, int nbMonstre)
+        public static void Jeu (Personnage hero, Personnage[] ennemi, int[] dimension, int nbMonstre)
         {
-            int monstresRestant = nbMonstre;
             int comptemp = 0;
             while (!hero.isDead && comptemp!=nbMonstre) //compter le nombre de monstres.isDead 
             {
                 // vérifier si le perso est adjacent au monstre et si oui, on affiche le monstre
-                CheckRencontre Verif = new CheckRencontre();
-                Verif.adjacent(hero,ennemi,10);
+                CheckRencontre Verif = new();
+                Verif.adjacent(hero,ennemi,nbMonstre);
 
-                InitialiseGrille plateau = new InitialiseGrille();
+                InitialiseGrille plateau = new ();
 
                 char[,] tab = plateau.initPlateau(hero, ennemi, dimension);
                 imprimer_grille.affichePlateau(tab);
@@ -30,11 +29,11 @@ namespace heroes_VS_monster.Utils
                 
                 
                 // bouger le perso
-                ((heros)hero).mouvementHeros(hero, dimension);
+                ((Heros)hero).mouvementHeros(hero, dimension);
 
                 
                 // verifier si monste apparu et si oui baston
-                Verif.devoile(hero, ennemi, 10);
+                Verif.devoile(hero, ennemi, nbMonstre);
 
                 //compter les morts
                 comptemp = 0;
@@ -45,16 +44,15 @@ namespace heroes_VS_monster.Utils
                         comptemp += 1;
                     }
                 }
-                Console.WriteLine(comptemp);
-                Console.ReadKey();
+                
 
 
             }
 
             if (!hero.isDead)
             {
-                Console.WriteLine($"{hero.nom} le {hero.race} est victorieux après avoir terassé les {nbMonstre} monstres qui se sont attaqués à lui");
-                Console.WriteLine($"{hero.nom} le {hero.race} possède maintenant {hero.piecesDOr} PO {hero.cuir} cuirs");
+                Console.WriteLine($"{hero.Nom} le {hero.race} est victorieux après avoir terassé les {nbMonstre} monstres qui se sont attaqués à lui");
+                Console.WriteLine($"{hero.Nom} le {hero.race} possède maintenant {hero.piecesDOr} PO {hero.cuir} cuirs");
             }
 
         }

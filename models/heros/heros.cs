@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace heroes_VS_monster.models.heros
+namespace heroes_VS_monster.models.Heros
 {
-    public class heros : Personnage
+    public class Heros : Personnage
     {
-        public heros(string name) : base()
+        public Heros(string name) : base()
         {
-            nom = name;
+            Nom = name;
             token = 'H';
         }
         public int[] mouvementHeros(Personnage heros, int[] dimensionTableau)
@@ -26,27 +26,27 @@ namespace heroes_VS_monster.models.heros
                     switch (move)
                     {
                         case 'z':
-                            if (heros.position[0] != 0)
-                            {
-                                heros.position[0] -= 1;
-                            }
-                            break;
-                        case 's':
-                            if (heros.position[0] != dimensionTableau[0] - 1)
-                            {
-                                heros.position[0] += 1;
-                            }
-                            break;
-                        case 'q':
                             if (heros.position[1] != 0)
                             {
                                 heros.position[1] -= 1;
                             }
                             break;
-                        case 'd':
+                        case 's':
                             if (heros.position[1] != dimensionTableau[1] - 1)
                             {
                                 heros.position[1] += 1;
+                            }
+                            break;
+                        case 'q':
+                            if (heros.position[0] != 0)
+                            {
+                                heros.position[0] -= 1;
+                            }
+                            break;
+                        case 'd':
+                            if (heros.position[0] != dimensionTableau[0] - 1)
+                            {
+                                heros.position[0] += 1;
                             }
                             break;
                         default:

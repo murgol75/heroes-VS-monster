@@ -19,13 +19,13 @@ namespace heroes_VS_monster.Utils
                     for (int k = 0; k < ennemi.Count(); k++)
                     {
                         // verifier si l'emplacement correspond au heros
-                        if (i == hero.position[1] && j == hero.position[0])
+                        if (i == hero.position[0] && j == hero.position[1])
                         {
                             plateau[i, j] = hero.token;
                         }
                         // verifier si l'emplacement correspond à un des monstres
-                        // pourquoi ne m'en mets t'il qu'un seul ?
-                        else if (i == ennemi[k].position[1] && j == ennemi[k].position[0])       
+                        
+                        else if (i == ennemi[k].position[0] && j == ennemi[k].position[1])       
                         {
                             if (!ennemi[k].isDead && !ennemi[k].isHidden)
                             {

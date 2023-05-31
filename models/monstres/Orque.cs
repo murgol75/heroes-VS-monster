@@ -10,11 +10,11 @@ namespace heroes_VS_monster.models.monstres
 {
     public class Orque : Monstre
     {
-        public Orque() : base()
+        public Orque(int[] dimension) : base(dimension)
         {
-            piecesDOr = dices.RollD(6);
-            bonusRacialForce = 1;
-            pv = endurance + modEndurance;
+            piecesDOr = dices.RollD(1,6);
+            BonusRacialForce = 1;
+            Pv = Endurance + ModEndurance;
             race = "orque";
             token = 'O';
         }

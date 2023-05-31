@@ -9,12 +9,12 @@ namespace heroes_VS_monster.models.monstres
 {
     public class Dragonnet : Monstre
     {
-        public Dragonnet() : base()
+        public Dragonnet(int[] dimension) : base(dimension)
         {
-            piecesDOr = dices.RollD(6);
-            cuir = dices.RollD(4);
-            bonusRacialEndurance = 1;
-            pv = endurance + modEndurance;
+            piecesDOr = dices.RollD(1,6);
+            cuir = dices.RollD(1,4);
+            BonusRacialEndurance = 1;
+            Pv = Endurance + ModEndurance;
             race = "dragonet";
             token = 'D';
         }

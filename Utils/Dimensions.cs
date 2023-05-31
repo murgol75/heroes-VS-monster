@@ -17,12 +17,12 @@ namespace heroes_VS_monster.Utils
             do
             {
                 Console.WriteLine("définissez la hauteur du tableau");
-                a = int.TryParse(Console.ReadLine(), out dimension[0]);
+                a = int.TryParse(Console.ReadLine(), out dimension[1]);
             } while (!a);
             do
             {
                 Console.WriteLine("définissez la largeur du tableau");
-                b = int.TryParse(Console.ReadLine(), out dimension[1]);
+                b = int.TryParse(Console.ReadLine(), out dimension[0]);
             } while (!b);
 
 

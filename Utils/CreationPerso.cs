@@ -1,5 +1,5 @@
 ﻿using heroes_VS_monster.models;
-using heroes_VS_monster.models.heros;
+using heroes_VS_monster.models.Heros;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,12 +30,16 @@ namespace heroes_VS_monster.Utils
             switch (persoRace)
             {
                 case "humain":
-                    return herosPrincipal = new humain(persoName);
+                    herosPrincipal = new Humain(persoName);
+                    break;
                 case "nain":
-                    return herosPrincipal = new Nain(persoName);
+                    herosPrincipal = new Nain(persoName);
+                    break;
                 default:
-                    return herosPrincipal = new humain(persoName);
+                    herosPrincipal = new Humain(persoName);
+                    break;
             }
+            return herosPrincipal;
         }
         
 

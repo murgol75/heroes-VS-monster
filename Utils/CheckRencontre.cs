@@ -14,7 +14,7 @@ namespace heroes_VS_monster.Utils
         {
             for (int i=0;i<NombreDeMonstre;i++)
             {
-                if (Math.Abs(hero.position[0] - monstre[i].position[0])==1 && Math.Abs(hero.position[1] - monstre[i].position[1]) == 1)
+                if (Math.Abs(hero.position[0] - monstre[i].position[0])<=1 && Math.Abs(hero.position[1] - monstre[i].position[1]) <= 1)
                 {
                     monstre[i].isHidden = false;
                 }
@@ -24,7 +24,7 @@ namespace heroes_VS_monster.Utils
         {
             for (int i = 0; i < NombreDeMonstre; i++)
             {
-                if (!monstre[i].isHidden)
+                if (!monstre[i].isHidden && !monstre[i].isDead)
                 {
 
                     baston.Fight(hero, monstre[i]);

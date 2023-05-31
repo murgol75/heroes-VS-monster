@@ -4,16 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace heroes_VS_monster.models.heros
+namespace heroes_VS_monster.models.Heros
 {
-    public class humain : heros
+    public class Humain : Heros
     {
-        public humain(string name) : base(name)
+        public Humain(string name) : base(name)
         {
-            bonusRacialForce = 1;
-            bonusRacialEndurance = 1;
-            pv = endurance + modEndurance;
-            maxPv = pv;
+            BonusRacialForce = 1;
+            BonusRacialEndurance = 1;
+            Pv = Endurance + ModEndurance;
+            maxPv = Pv;
             race = "humain";
         }
     }

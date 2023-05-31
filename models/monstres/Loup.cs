@@ -9,11 +9,11 @@ namespace heroes_VS_monster.models.monstres
 {
     public class Loup : Monstre
     {
-        public Loup() : base()
+        public Loup(int[] dimension) : base(dimension)
         {
-            cuir = dices.RollD(4);
-            bonusRacialEndurance = 1;
-            pv = endurance + modEndurance;
+            cuir = dices.RollD(1,4);
+            BonusRacialEndurance = 1;
+            Pv = Endurance + ModEndurance;
             race = "loup";
             token = 'L';
         }
