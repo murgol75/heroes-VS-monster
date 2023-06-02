@@ -30,7 +30,7 @@ namespace heroes_VS_monster
 
             // debut du combat, l'idée c'est de tout gerer à partir de "Game.jeu"
             Game Jouons = new Game();
-            Game.Jeu(herosPrincipal, ennemis, plateau, NbrMonstres);
+            Jouons.Jeu(herosPrincipal, ennemis, plateau, NbrMonstres);
 
             
             
