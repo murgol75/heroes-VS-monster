@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace heroes_VS_monster.Utils
 {
-    public class imprimer_grille
+    public static class ImprimerGrille
     {
-        public static void affichePlateau(char[,] grille)
+        public static void AffichePlateau(char[,] grille)
         {
             Console.Clear();
             Console.Write("╔");

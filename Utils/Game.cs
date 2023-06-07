@@ -9,7 +9,7 @@ using heroes_VS_monster.models.monstres;
 
 namespace heroes_VS_monster.Utils
 {
-    public class Game
+    public static class Game // une class static ne me permet que de mettre des méthodes static, mais ça prend beaucoup moins de mémoire car je ne dois pas l'instancier
     {
         
         public static void Jeu (Personnage hero, Personnage[] ennemi, int[] dimension, int nbMonstre)
@@ -24,7 +24,7 @@ namespace heroes_VS_monster.Utils
                 InitialiseGrille plateau = new ();
 
                 char[,] tab = plateau.initPlateau(hero, ennemi, dimension);
-                imprimer_grille.affichePlateau(tab);
+                ImprimerGrille.AffichePlateau(tab);
 
                 
                 
