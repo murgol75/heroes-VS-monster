@@ -1,5 +1,9 @@
 ﻿# HEROS VS MONSTER
 
+**Début du jeu**
+![Intro](images/intro.jpg)
+
+**Plateau**
 ![Plateau](images/board.jpg)
 
 
