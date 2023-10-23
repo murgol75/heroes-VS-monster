@@ -1,6 +1,6 @@
 ﻿# HEROS VS MONSTER
 
-![Plateau](../images/board.jpg)
+![Plateau](images/board.jpg)
 
 
 # Pourquoi ?
