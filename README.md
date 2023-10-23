@@ -1,30 +1,30 @@
 ﻿# HEROS VS MONSTER
 
-Projet "Heroes Vs Monsters"
+![Plateau](../images/board.jpg)
 
-## Description du Projet
 
-Le projet "Heroes Vs Monsters" est une application console en C# qui met en pratique les concepts de la programmation orientée objet et les compétences acquises en date du 25/05/2023. Il s'agit d'un jeu simple où un héros évolue dans une grille           virtuelle, cherchant à vaincre des monstres dispersés aléatoirement sur cette grille.
+# Pourquoi ?
 
-## Fonctionnalités Clés
+Le projet "Heroes Vs Monsters" est la finalité du cours de C# Orienté Objet, le but était de gérer les classes afin de créer des personnages héros et des monstres
 
-Le projet "Heroes Vs Monsters" comprend les fonctionnalités clés suivantes :
-Héros et Monstres
+## Quoi ?
 
-Il permet la création d'objets représentant le héros et les monstres, chacun ayant des attributs distincts tels que la santé, la force, et la position sur la grille.
-Grille de Jeu
+Le projet comprend les features suivantes
 
-Une grille virtuelle est mise en place pour représenter le monde du jeu. Le héros peut se déplacer dans cette grille en utilisant des commandes spécifiques.
-Combat au Contact
+1. des personnages
+	qui ont tous une force et une endurance, déterminés en lançant 4 dés à 6 faces et en additionnant les 3 résultats les plus haut
+	un bonus de force et un bonus d'endurance qui dépend directement de la caractéristique principale.  Elle est égale à -1 si la caractéristique dont elle dépent est inférieure à 5, +1 entre 10 et 14 et +2 si elle est supérieure à 14'
+    des points de vie qui sont égaux à l'endurance + bonus d'endurance
+	un positionnement dans la grille sous la forme de X,Y
 
-Lorsque le héros se déplace à côté d'un monstre, un combat se déclenche automatiquement. L'issue du combat est déterminée en fonction des caractéristiques du héros et du monstre.
+	les personnages sont divisés entre héros (nain ou humain) et monstre (Orc, loup ou Dragon)
 
-## Interface Console
+2. Une grille
+	délimités par des caractères ascii qui représentent la burdure du "plateau de jeu"
 
-L'interface console est utilisée pour afficher la grille de jeu, l'état du héros, des monstres, ainsi que les résultats des combats.
-Objectif Pédagogique
+3. Un système de combat simple, lorsqu'un personnage frappe, il inflige d'office 1D4 points de vie + son bonus de force
+si le héros gagne le combat, il gagne le butin que le monstre transportait (de l'or pour les orcs, du cuir pour les loups et les 2 pour les dragons')
 
-Ce projet a été créé dans le cadre d'un exercice pour appliquer les connaissances en programmation C# et en programmation orientée objet. Il vise à renforcer la compréhension des concepts tels que la création d'objets, l'encapsulation, l'héritage,        la polymorphie et la gestion des interactions dans une application.
 ## Comment Exécuter le Projet
 
 Pour exécuter ce projet, suivez ces étapes simples :
@@ -38,6 +38,13 @@ Compilez le programme.
 Exécutez le programme.
 
 Suivez les instructions affichées dans la console pour jouer au jeu.
-Ce projet a été conçu comme une base solide pour l'apprentissage de la programmation C# et de la programmation orientée objet. Nous encourageons vivement les contributions, les signalements de problèmes, ainsi que les propositions d'améliorations. Votre feedback est précieux pour notre apprentissage collectif.
 
-N'hésitez pas à participer et à vous amuser en explorant ce petit jeu console tout en renforçant vos compétences en programmation orientée objet !
+## Règles du jeu
+
+Lancez le jeu, entre votre nom, choisissez si vous voulez jouer un humain (+1 en Force et Endurance) ou un nain (+2 en endurance) puis de la taille du plateau et du nombre de monstre à rencontrer
+
+pour déplacer votre personnage, représenté par la lettre H (comme Heros) vous pouvez utiliser les touches Z, Q, S, D.  
+Les monstres sont invisibles jusqu'à ce que le personnage se déplace sur une case adjacente et est représenté par un O pour les orques, L pour les loups et D pour les dragons
+Le jeu se termine lorsque le héros est mort ou lorsqu'il a tué tous les monstres du plateau
+
+Ce projet a été conçu comme une base solide pour l'apprentissage de la programmation C# et de la programmation orientée objet. Nous encourageons vivement les contributions, les signalements de problèmes, ainsi que les propositions d'améliorations. Votre feedback est précieux pour notre apprentissage collectif.
